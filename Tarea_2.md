@@ -1,3 +1,6 @@
+
+## Supuesto Proyecto de Bases de Datos
+
 La Fundación Blastoise se construyó el 1 de abril de 1997. Desde entonces desarrollamos proyectos que garanticen el acceso al agua potable y al saneamiento en las zonas del planeta que así lo requieran. Intentamos promover una gestión más sostenible del agua que permita no sólo ayudar a las poblaciones que más lo necesitan sino que también crear conciencia en la importancia de cuidar nuestros recursos naturales. 
 
 Alice Springs es la tercera ciudad más grande en el Territorio del Norte de Australia, cerca de la frontera sur, en medio del desierto australiano. Consta de una población de 28605 habitantes, la cual vive del sector terciario gracias a su buena ubicación. Concretamente, se localiza justo en el centro de la carretera Stuart, la cual cruza el país del Norte a Sur, constituyéndose como una de las carreteras más transitadas de Australia. 
@@ -18,4 +21,10 @@ Por último, como conclusión destacar que para obtener un buen análisis y eleg
 - El número de habitantes en esa población.
 - El número de precipitaciones en la zona.
 - Cantidad de agua gastada.
+
+## Referencias
+
+1. [Artículo Wikipedia sobre el Desierto de Simpson](https://es.wikipedia.org/wiki/Desierto_de_Simpson#Clima)
+2. [Artículo sobre los desiertos más importantes de Australia](http://www.econoce.com/los-desiertos-de-australia-mas-importantes/)
+3. [Artículo Wikipedia sobre Alice Springs](https://es.wikipedia.org/wiki/Alice_Springs)
 
