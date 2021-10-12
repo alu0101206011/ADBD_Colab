@@ -28,3 +28,11 @@ Por último, como conclusión destacar que para obtener un buen análisis y eleg
 2. [Artículo sobre los desiertos más importantes de Australia](http://www.econoce.com/los-desiertos-de-australia-mas-importantes/)
 3. [Artículo Wikipedia sobre Alice Springs](https://es.wikipedia.org/wiki/Alice_Springs)
 
+## Participantes
+
+> Anabel Díaz Labrador (alu0101206011@ull.edu.es)
+> Andrea Calero Caro (alu0101202952@ull.edu.es)
+> Alejandro Martín de León (alu0101015941@ull.edu.es)
+> Sheyla Ruiz-Gómez Ferreira (alu0101124445@ull.edu.es)
+
+
