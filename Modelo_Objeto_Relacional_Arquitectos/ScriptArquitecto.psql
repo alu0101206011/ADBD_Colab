@@ -1,0 +1,152 @@
+-- -----------------------------------------------------
+-- Schema mydb  FUNCIONA
+-- -----------------------------------------------------
+DROP DATABASE IF EXISTS arquitecto;
+
+CREATE DATABASE arquitecto;
+\c arquitecto
+
+
+-- Atributo compuesto
+DROP TYPE IF EXISTS direccion_type CASCADE;
+CREATE TYPE direccion_type AS (
+    tipo_via    VarChar(50),
+    nombre_via  VarChar(60),
+    poblacion   VarChar(60),
+    cp          VarChar(5),
+    provincia   VarChar(50)
+);
+
+DROP TYPE IF EXISTS figura_type CASCADE;
+CREATE TYPE figura_type AS (
+    Cod_Figura    		integer,
+    Nombre         VarChar(30),
+    Color          VarChar(30)
+);
+
+DROP TABLE IF EXISTS FIGURA CASCADE;
+CREATE TABLE FIGURA (
+    datos figura_type,
+    PRIMARY KEY (datos)
+);
+
+DROP TYPE IF EXISTS plano_type CASCADE;
+CREATE TYPE plano_type AS (
+    Cod_Plano     		integer,
+    Fecha_Entrega       date,
+    Arquitecto         VarChar(30),
+    Dibujo_Plano        boolean,
+    Num_Figuras         integer,
+    Tiene				figura_type
+);
+
+DROP TABLE IF EXISTS PLANO CASCADE;
+CREATE TABLE PLANO (
+    datos plano_type,
+    PRIMARY KEY (datos)
+);
+
+DROP TYPE IF EXISTS proyecto_type CASCADE;
+CREATE TYPE proyecto_type AS (
+    cd_proyecto     integer,
+    nombre          VarChar(60),
+    tiene_planos    plano_type
+);
+
+-- tabla proyecto
+DROP TABLE IF EXISTS PROYECTO CASCADE;
+CREATE TABLE PROYECTO (
+    datos proyecto_type,
+    PRIMARY KEY (datos)
+);
+
+-- datos del jefe de proyecto
+DROP TYPE IF EXISTS jefe_proyecto_type CASCADE;
+CREATE TYPE jefe_proyecto_type AS (
+    cd_jefe     integer,
+    nombre      VarChar(60),
+    direccion   direccion_type,
+    telefono    VarChar(9),
+    dirige      proyecto_type
+);
+
+-- creacion tabla jefe proyecto
+DROP TABLE IF EXISTS JEFE_PROYECTO CASCADE;
+CREATE TABLE JEFE_PROYECTO (
+    datos jefe_proyecto_type,
+    PRIMARY KEY (datos)
+);
+
+DROP TYPE IF EXISTS coor_type CASCADE;
+CREATE TYPE coor_type AS (
+    x   DOUBLE PRECISION,
+    y   DOUBLE PRECISION
+);
+
+CREATE TYPE linea_type AS (
+    Id_Linea    		integer,
+    Longitud		    DOUBLE PRECISION,
+    puntos				coor_type
+);
+
+DROP TABLE IF EXISTS LINEA CASCADE;
+CREATE TABLE LINEA (
+    datos linea_type,
+    PRIMARY KEY (datos)
+);
+
+CREATE TYPE poligono_type AS (
+    Num_Lineas    		integer,
+    tiene				figura_type,
+    contiene	  linea_type
+);
+
+DROP TABLE IF EXISTS POLIGONO CASCADE;
+CREATE TABLE POLIGONO (
+    datos poligono_type,
+    PRIMARY KEY (datos)
+);
+
+
+INSERT INTO POLIGONO (datos) VALUES (ROW(4, ROW(1, 'estrella', 'verde'), ROW(1, 92.3, ROW(1.4, 5.7))));
+INSERT INTO POLIGONO (datos) VALUES (ROW(10, ROW(2, 'cuadrado', 'rosa'), ROW(2, 13.3, ROW(3.4, 8.7))));
+INSERT INTO POLIGONO (datos) VALUES (ROW(3, ROW(3, 'triángulo', 'azul'), ROW(5, 45.3, ROW(7.4, 1.7))));
+INSERT INTO POLIGONO (datos) VALUES (ROW(5, ROW(4, 'hexágono', 'morado'), ROW(4, 15.3, ROW(2.4, 5.7))));
+INSERT INTO POLIGONO (datos) VALUES (ROW(7, ROW(5, 'decágono', 'rojo'), ROW(3, 53.3, ROW(0.4, 1.7))));
+
+INSERT INTO LINEA (datos) VALUES (ROW(1, 9.4, ROW(1.6, 6.8)));
+INSERT INTO LINEA (datos) VALUES (ROW(2, 8.1, ROW(5.6, 3.4)));
+INSERT INTO LINEA (datos) VALUES (ROW(3, 1.2, ROW(3.6, 5.8)));
+INSERT INTO LINEA (datos) VALUES (ROW(4, 2.7, ROW(2.6, 6.0)));
+INSERT INTO LINEA (datos) VALUES (ROW(10, 3.5, ROW(7.6, 8.2)));
+
+INSERT INTO JEFE_PROYECTO (datos) VALUES (ROW(12, 'Johny Meducho', ROW('Calle', 'Chamo', 'Los Realejos', 38278, 'S/C de Tenerife'), 922783828, ROW(1, 'Ampeter', ROW(1, '2005-01-18', 'Enrique', true, 1, ROW(1, 'estrella', 'verde')))));
+INSERT INTO JEFE_PROYECTO (datos) VALUES (ROW(14, 'Elton Titho', ROW('Calle', 'Disgusto', 'La Orotava', 38223, 'S/C de Tenerife'), 922367828, ROW(2, 'ADBD', ROW(2, '2006-04-18', 'Pablo', true, 4, ROW(2, 'cuadrado', 'rosa')))));
+INSERT INTO JEFE_PROYECTO (datos) VALUES (ROW(15, 'Henry Dículo', ROW('Calle', 'Martillo', 'La Matanza', 38278, 'S/C de Tenerife'), 922822345, ROW(3, 'Alpha', ROW(3, '2007-05-17', 'Andrea', true, 3, ROW(4, 'hexagono', 'morado')))));
+INSERT INTO JEFE_PROYECTO (datos) VALUES (ROW(16, 'Elvis Tek', ROW('Calle', 'Cuchara', 'El Sauzal', 38454, 'S/C de Tenerife'), 922367828, ROW(4, 'Maravilloso', ROW(4, '2008-06-16', 'Alejandro', true, 2, ROW(5, 'decagono', 'rojo')))));
+INSERT INTO JEFE_PROYECTO (datos) VALUES (ROW(17, 'Elvis Cocho', ROW('Calle',  'Pimienta', 'La Victoria', 38234, 'S/C de Tenerife'), 922367489, ROW(5, 'SQL', ROW(5, '2009-07-15', 'Mario', true, 5, ROW(3, 'triangulo', 'azul')))));
+
+INSERT INTO PROYECTO (datos) VALUES (ROW(1, 'Ampeter', ROW(1, '2005-01-18', 'Enrique', true, 1, ROW(1, 'estrella', 'verde'))));
+INSERT INTO PROYECTO (datos) VALUES (ROW(2, 'ADBD', ROW(2, '2006-04-18', 'Pablo', true, 4, ROW(2, 'cuadrado', 'rosa'))));
+INSERT INTO PROYECTO (datos) VALUES (ROW(3, 'Alpha', ROW(3, '2007-05-17', 'Andrea', true, 3, ROW(4, 'hexagono', 'morado'))));
+INSERT INTO PROYECTO (datos) VALUES (ROW(4, 'Maravilloso', ROW(4, '2008-06-16', 'Alejandro', true, 2, ROW(5, 'decagono', 'rojo'))));
+INSERT INTO PROYECTO (datos) VALUES (ROW(5, 'SQL', ROW(5, '2009-07-15', 'Mario', true, 5, ROW(3, 'triangulo', 'azul'))));
+
+INSERT INTO PLANO (datos) VALUES (ROW(1, '2005-01-18', 'Enrique', true, 1, ROW(1, 'estrella', 'verde')));
+INSERT INTO PLANO (datos) VALUES (ROW(2, '2001-02-21', 'Saúl', true, 4, ROW(2, 'cuadrado', 'rosa')));
+INSERT INTO PLANO (datos) VALUES (ROW(3, '2003-03-20', 'Jaime', true, 3, ROW(3, 'triángulo', 'azul')));
+INSERT INTO PLANO (datos) VALUES (ROW(4, '2023-04-19', 'Anabel', true, 2, ROW(4, 'hexágono', 'morado')));
+INSERT INTO PLANO (datos) VALUES (ROW(5, '2013-05-11', 'Eustaquio', true, 5, ROW(5, 'decágono', 'rojo')));
+
+INSERT INTO FIGURA (datos) VALUES (ROW(1, 'estrella', 'verde'));
+INSERT INTO FIGURA (datos) VALUES (ROW(2, 'cuadrado', 'rosa'));
+INSERT INTO FIGURA (datos) VALUES (ROW(3, 'triángulo', 'azul'));
+INSERT INTO FIGURA (datos) VALUES (ROW(4, 'hexágono', 'morado'));
+INSERT INTO FIGURA (datos) VALUES (ROW(5, 'decágono', 'rojo'));
+
+SELECT * FROM POLIGONO;
+SELECT * FROM LINEA;
+SELECT * FROM JEFE_PROYECTO;
+SELECT * FROM PROYECTO;
+SELECT * FROM PLANO;
+SELECT * FROM FIGURA;
