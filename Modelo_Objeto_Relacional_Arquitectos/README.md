@@ -18,11 +18,11 @@ Para la implementación de dicho ejercicio, se han seguido los siguientes pasos:
 
 1) Generación de un diagrama de clases UML: La herramienta utilizada ha sido 'StarUML', y se han definido las distintas clases, relaciones y procesos empleados que define el enunciado de la práctica.
 
-Las características:
+      Las características :
 
-3) Creación del script: Con los conocimientos adquiridos en clase, se ha elaborado un script compatible con PostgreSQL.
-4) Creación de la base de datos e insersión de datos: Con el script creado anteriormente, se forma una nueva BBDD a la que se le añaden las tablas y relaciones pertinentes.
-5) Muestra de los datos obtenidos: Se han realizado capturas de pantallas de los resultados obtenidos.
+2) Creación del script: Con los conocimientos adquiridos en clase, se ha elaborado un script compatible con PostgreSQL.
+3) Creación de la base de datos e insersión de datos: Con el script creado anteriormente, se forma una nueva BBDD a la que se le añaden las tablas (con diversas entradas) y las relaciones pertinentes.
+4) Muestra de los datos obtenidos: Se han realizado capturas de pantallas de los resultados obtenidos.
 
 
 ## Pruebas de ejecución
