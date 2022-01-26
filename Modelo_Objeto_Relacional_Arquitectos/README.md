@@ -18,7 +18,14 @@ Para la implementación de dicho ejercicio, se han seguido los siguientes pasos:
 
 1) Generación de un diagrama de clases UML: La herramienta utilizada ha sido 'StarUML', y se han definido las distintas clases, relaciones y procesos empleados que define el enunciado de la práctica.
 
-      Las características :
+      Las características del objeto-relacional que podemos localizar en esta práctica son:
+      
+            - Asociaciones: Vínculo que existe entre clases.
+            - Agregación: Indicamos que plano pertenece a Proyecto.
+            - Composición: Un polígono está formado por líneas.
+            - Herencia: Polígono hereda de la clase Figura.
+            - Cardinalidades: Especifican la multiplicidad entre clases.
+            - Atributos compuestos: Atributos que pueden ser dividiso en subpartes (p.ejm: Dirección y Puntos). 
 
 2) Creación del script: Con los conocimientos adquiridos en clase, se ha elaborado un script compatible con PostgreSQL.
 3) Creación de la base de datos e insersión de datos: Con el script creado anteriormente, se forma una nueva BBDD a la que se le añaden las tablas (con diversas entradas) y las relaciones pertinentes.
