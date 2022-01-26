@@ -25,7 +25,7 @@ Para la implementación de dicho ejercicio, se han seguido los siguientes pasos:
             - Composición: Un polígono está formado por líneas.
             - Herencia: Polígono hereda de la clase Figura.
             - Cardinalidades: Especifican la multiplicidad entre clases.
-            - Atributos compuestos: Atributos que pueden ser dividiso en subpartes (p.ejm: Dirección y Puntos). 
+            - Atributos compuestos: Atributos que pueden ser divididos en subpartes (p.ejm: Dirección y Puntos). 
 
 2) Creación del script: Con los conocimientos adquiridos en clase, se ha elaborado un script compatible con PostgreSQL.
 3) Creación de la base de datos e insersión de datos: Con el script creado anteriormente, se forma una nueva BBDD a la que se le añaden las tablas (con diversas entradas) y las relaciones pertinentes.
