@@ -28,7 +28,7 @@ Para la implementación de dicho ejercicio, se han seguido los siguientes pasos:
             - Atributos compuestos: Atributos que pueden ser divididos en subpartes (p.ejm: Dirección y Puntos). 
 
 2) Creación del script: Con los conocimientos adquiridos en clase, se ha elaborado un script compatible con PostgreSQL.
-3) Creación de la base de datos e insersión de datos: Con el script creado anteriormente, se forma una nueva BBDD a la que se le añaden las tablas (con diversas entradas) y las relaciones pertinentes.
+3) Creación de la base de datos e inserción de datos: Con el script creado anteriormente, se forma una nueva BBDD a la que se le añaden las tablas (con diversas entradas) y las relaciones pertinentes.
 4) Muestra de los datos obtenidos: Se han realizado capturas de pantallas de los resultados obtenidos.
 
 
