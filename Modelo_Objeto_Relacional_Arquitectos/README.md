@@ -12,6 +12,17 @@
 
 ## Desarrollo de la Práctica
 
+Una base de datos objeto-relacional es una extensión de la base de datos relacional tradicional, a la cual se le proporcionan características de la programación orientada a objetos. Para entender sus elementos y características, se nos ha propuesto un ejercicio, el cual se puede encontrar en: https://docs.google.com/presentation/d/1ANIQYZ7W94Mwvo_NXjR-I9Jrv8-uiWG2pleBZ4FZOM8/edit#slide=id.g108f71c5319_0_9.
+
+Para la implementación de dicho ejercicio, se han seguido los siguientes pasos:
+
+1) Generación de un diagrama de clases UML: La herramienta utilizada ha sido 'StarUML', y se han definido las distintas clases, relaciones y procesos empleados que define el enunciado de la práctica.
+
+Las características:
+
+3) Creación del script: Con los conocimientos adquiridos en clase, se ha elaborado un script compatible con PostgreSQL.
+4) Creación de la base de datos e insersión de datos: Con el script creado anteriormente, se forma una nueva BBDD a la que se le añaden las tablas y relaciones pertinentes.
+5) Muestra de los datos obtenidos: Se han realizado capturas de pantallas de los resultados obtenidos.
 
 
 ## Pruebas de ejecución
